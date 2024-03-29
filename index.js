@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({
 }));
 const port = '3000';
 const db = require("./models");
-db.sequelize.sync({ alter: true })
+db.sequelize.sync()
   .then(() => {
     console.log("Synced db.");
   })
