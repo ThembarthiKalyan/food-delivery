@@ -1,7 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 const port = '3000';
 const db = require("./models");
 db.sequelize.sync({ alter: true })
